@@ -1,0 +1,7 @@
+[auth]
+token=e4c01adda02b4bd08cb45acec2e92ff6555c248ab6d54152bacedf269e381d63
+
+[defaults]
+org=671228081d6b
+project=vue
+url=https://sentry.io/
