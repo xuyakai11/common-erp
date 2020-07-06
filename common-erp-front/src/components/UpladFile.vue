@@ -62,7 +62,6 @@ export default {
       }
       const md5 = await this.calculateMD5(files[0]);
       this.currentChunk = await this.getStartChunk(md5);
-      console.log(currentChunk)
       this.uploadFileChunkrray = await this.getUploadFileChunkrray(md5,files[0]);
       console.log('uploadFileChunkrray', this.uploadFileChunkrray)
       this.uploading()
@@ -99,12 +98,12 @@ export default {
           form.append('chunkSize', chunkSize);
           form.append('hash', md5); 
           const axiosOptions = {
-            onUploadProgress: e => {
+            onUploadProgress: e => { // axios提供的上传处理进度事件
               // 处理上传的进度
-              console.log(chunks, currentChunk, e, file);
+              console.log('onUploadProgress',chunks, currentChunk, e, file);
             }
           }
-          arr.push(this.post('/file/upload', form))
+          arr.push(this.post('/file/upload', form, axiosOptions))
         }
         resolve(arr)
       })

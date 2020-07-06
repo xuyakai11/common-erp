@@ -1,13 +1,24 @@
 <template>
-  <div id="app">
-    <Layout />
-  </div>
+  <a-layout id="components-layout-fixed-trigger">
+    <a-layout-sider :style="{ overflow: 'auto', minHeight: '100vh', position: 'fixed', left: 0 }">
+      <div class="logo" />
+      <Aside />
+    </a-layout-sider>
+    <a-layout :style="{ marginLeft: '200px' }">
+      <a-layout-header style="background: #fff; padding: 0">
+        
+      </a-layout-header>
+      <a-layout-content :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }">
+        <router-view/>
+      </a-layout-content>
+    </a-layout>
+  </a-layout>
 </template>
 <script>
-import Layout from '@/components/Layout';
-
+import Aside from '@/components/Aside'
 export default {
-  components: { Layout },
+  name: 'Layout',
+  components:{ Aside },
   data(){
     return {
       collapsed: false,

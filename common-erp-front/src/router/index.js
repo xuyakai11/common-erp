@@ -1,20 +1,28 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/views/Home.vue'
-import Test from '@/views/Test.vue'
+import Index from '@/views/Index.vue'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'index',
+    component: Index
   },
   {
-    path: '/test',
-    name: 'Test',
-    component: Test
+    path: '/index',
+    name: 'Index',
+    label: '首页',
+    icon: 'home',
+    component: Index
+  },
+  {
+    path: '/home',
+    name: 'Home',
+    icon: 'cloud-upload',
+    label: '上传测试',
+    component: () => import("@/views/Home.vue")
   }
 ]
 
@@ -23,5 +31,5 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-
+export { routes }
 export default router

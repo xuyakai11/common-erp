@@ -15,13 +15,15 @@ import axios from 'axios';
 // })
 // service.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
-Vue.prototype.axios = axios
 // 开始设置请求 发起的拦截处理
 // config 代表发起请求的参数的实体
 Object.assign(axios.defaults,{
-  baseURL: 'http://10.18.145.80:3000',
-  timeout: 5000
+  baseURL: 'http://localhost:3000',
+  timeout: 5000,
+  withCredentials: true
 })
+Vue.prototype.axios = axios
+
 // let requestName;
 // const CancelToken = axios.CancelToken; // 取消请求
 // axios.interceptors.request.use((config) => {
