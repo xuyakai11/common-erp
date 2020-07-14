@@ -7,7 +7,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'index',
+    name: 'Index',
     component: Index
   },
   {
@@ -16,6 +16,12 @@ const routes = [
     label: '首页',
     icon: 'home',
     component: Index
+  },{
+    path: '/learn',
+    name: 'Learn',
+    label: '练习',
+    icon: 'home',
+    component: () => import("@/views/Learn.vue")
   },
   {
     path: '/home',

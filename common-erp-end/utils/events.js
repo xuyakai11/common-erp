@@ -76,6 +76,20 @@ module.exports = function () {
   // fs.createReadStream(`${dir}/input.txt.gz`)
   //   .pipe(zlib.createGunzip())
   //   .pipe(fs.createWriteStream(`${dir}/input.txt`))
-
+  
+  process.nextTick(()=>{
+    console.log('nextTick2')
+    process.nextTick(()=>{
+      console.log('n4')
+    })
+  })
+  setImmediate(()=>{
+    console.log('setImmediate4')
+    process.nextTick(()=>{
+      console.log('nextTick3')
+    })
+  })
+  
   console.log('\033[0;32m events end \033[0;m')
 }
+// 2, duilie 4 duilie n3 s3
