@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     test() {
-      console.log(222)
+      console.log($global)
     },
     reverseNumber() {
       this.reverseNumberRes = reverseNumber(this.reverseNumberValue)

@@ -28,6 +28,5 @@ let combine = function (...chunks) {
   return res
 }
 
-console.log(combine(names, colors, storages))
+console.log(combine1(names, colors, storages))
 
-console.log([1,2].reduce((total,v)=>total+v,0))
